@@ -1,6 +1,8 @@
 <template>
     <div>
-        <input type="text" v-model.number="a"><br>
+        <label>
+            <input type="text" v-model.number="a">
+        </label><br>
         <span :style="active">ai2</span><br>
         <span :style="active1">3333</span><br>
 
