@@ -2,13 +2,34 @@
     <div>
         <input type="text" v-model.number="a"><br>
         <span :style="active">ai2</span><br>
-        <span :style="active1">3333</span>
+        <span :style="active1">3333</span><br>
+
+        <tab-bar>
+            <div slot="left">左购街</div>
+            <div slot="center">购物街</div>
+        </tab-bar><br>
+        <tr v-for="item in recommends">
+            <td>{{ item.name}}</td>
+        </tr>
     </div>
 </template>
 
 <script>
+    import TabBar from  './TabBar'
+
     export default {
         name: "Ai2",
+        props:{
+            recommends:{
+                type: Array,
+                default(){
+                    return []
+                }
+            }
+        },
+        components:{
+            TabBar
+        },
         data(){
             return{
                 a: 6

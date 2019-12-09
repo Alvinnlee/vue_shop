@@ -9,16 +9,24 @@
             <keep-alive>
                 <button @click="a">档案1</button>
             </keep-alive>
+            <br>
+            <Ai2 :recommends="recommends"/>
         </h3>
     </div>
 </template>
 
 <script>
+    import Ai2 from './Ai2'
+
     export default {
         name: "User",
+        components:{
+            Ai2
+        },
         data(){
             return{
-                userId: 'list'
+                userId: 'list',
+                recommends: [{name: 1},{name: 2}]
             }
         },
         methods:{
